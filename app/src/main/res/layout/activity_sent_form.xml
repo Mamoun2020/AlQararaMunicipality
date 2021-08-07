@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    tools:context=".activities.SentFormActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/sent_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9800"
+        app:subtitleTextColor="@color/black"
+        app:titleTextColor="@color/black"
+        app:title="إرسال الشكوى / المقترح"
+        tools:ignore="MissingConstraints" />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sent_toolbar"
+        android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="رقم الهوية"/>
+
+        <EditText
+            android:id="@+id/sent_et_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="yes"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:singleLine="true"
+            android:textColorLink="@color/black" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="رقم الجوال"/>
+
+        <EditText
+            android:id="@+id/sent_et_phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:singleLine="true"
+            android:textColorLink="@color/black" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="عنوان الشكوى"/>
+
+        <EditText
+            android:id="@+id/sent_et_title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:singleLine="true"
+            android:textColorLink="@color/black" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="أقرب معلم"/>
+
+        <Spinner
+            android:id="@+id/sent_sp_near"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:maxLines="1"
+            android:entries="@array/spinnerItems"
+            android:padding="@dimen/_4sdp"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="المنطقة"/>
+
+        <Spinner
+            android:id="@+id/sent_sp_area"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:maxLines="1"
+            android:entries="@array/spinnerItems"
+            android:padding="@dimen/_4sdp"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="وصف العنوان"/>
+
+        <EditText
+            android:id="@+id/sent_et_description"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="text"
+            android:maxLines="4"
+            android:singleLine="true"
+            android:scrollbars="vertical"
+            android:padding="@dimen/_16sdp"
+            android:textColorLink="@color/black" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="التصنيف"/>
+        <Spinner
+            android:id="@+id/sent_sp_cateogre"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:maxLines="1"
+            android:entries="@array/spinnerItems"
+            android:padding="@dimen/_4sdp"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="النوع"/>
+        <Spinner
+            android:id="@+id/sent_sp_type"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:maxLines="1"
+            android:entries="@array/spinnerItems"
+            android:padding="@dimen/_4sdp"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="نص الشكوى"/>
+
+        <EditText
+            android:id="@+id/sent_et_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:singleLine="true"
+            android:scrollbars="vertical"
+            android:padding="@dimen/_20sdp"
+            android:textColorLink="@color/black" />
+
+        <TextView
+            android:id="@+id/sent_tv_upload"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            android:background="#33000000"
+            android:gravity="center"
+            android:drawableEnd="@drawable/ic_photo"
+            android:padding="@dimen/_8sdp"
+            android:text="ارفاق صورة"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/sent_btn_sent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="إرسال"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

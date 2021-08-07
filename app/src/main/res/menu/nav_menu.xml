@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group1"
+        >
+    <item
+        android:id="@+id/drawer_home"
+        android:title="الصفحة الرئيسية"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:id="@+id/drawer_sent"
+        android:title="إرسال شكوى / مقترح"
+        android:icon="@drawable/ic_complaints"
+        />
+    <item
+        android:id="@+id/drawer_follow"
+        android:title="متابعة الشكوى / المقترح"
+        android:icon="@drawable/ic_follow"
+        />
+    </group>
+    <item
+        android:id="@+id/drawer_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="تسجيل خروج"
+        />
+</menu>

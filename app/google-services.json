@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "333966571722",
+    "project_id": "alqararamunicipality-b276d",
+    "storage_bucket": "alqararamunicipality-b276d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333966571722:android:64e4000fa6c9c21b6adc33",
+        "android_client_info": {
+          "package_name": "alqarara.municipality.alqararamunicipality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333966571722-sqbudl53sem2fqnmq0rjadpa714h38t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD5l2xJ3JoSjxTVj45eAf9eFgyYYVB220"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333966571722-sqbudl53sem2fqnmq0rjadpa714h38t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

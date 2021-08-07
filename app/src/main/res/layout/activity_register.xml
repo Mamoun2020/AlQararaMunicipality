@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    tools:context=".activities.LoginActivity" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:outlineSpotShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/black"
+        android:background="@drawable/header"
+        app:srcCompat="@drawable/header_background"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_270sdp"
+        android:layout_gravity="center"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        android:background="@color/white"
+        tools:ignore="UnusedAttribute">
+
+        <TextView
+            android:id="@+id/register_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_24sdp"
+            android:fontFamily="sans-serif-thin"
+            android:shadowColor="#40000000"
+            android:shadowDy="8"
+            android:shadowRadius="5"
+            android:padding="@dimen/_2sdp"
+            android:text="تسجيل"
+            android:textColor="#039BE5"
+            android:textSize="@dimen/_24sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_tf_userid"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:hint="رقم الهوية"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#039BE5"
+            app:boxStrokeWidth="@dimen/_2sdp"
+            app:errorEnabled="true"
+            app:hintTextColor="#039BE5"
+            app:layout_constraintTop_toBottomOf="@+id/register_tv_title"
+            app:startIconDrawable="@drawable/ic_user_id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_et_userid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_tf_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:hint="كلمة المرور"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#039BE5"
+            app:boxStrokeWidth="@dimen/_2sdp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
+            app:hintTextColor="#039BE5"
+            app:layout_constraintTop_toBottomOf="@id/register_tf_userid"
+            app:startIconDrawable="@drawable/ic_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_tf_password">
+
+            <TextView
+                android:id="@+id/register_tv_newuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-thin"
+                android:shadowColor="#80000000"
+                android:shadowDy="8"
+                android:shadowRadius="5"
+                android:text="لديك حساب؟"
+                android:padding="@dimen/_4sdp"
+                android:textAlignment="center"
+                android:textColor="#039BE5"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/register_btn_login"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/_72sdp"
+        android:backgroundTint="#039BE5"
+        android:fontFamily="sans-serif-black"
+        android:padding="@dimen/_8sdp"
+        android:shadowDy="8"
+        android:shadowRadius="5"
+        android:text="تسجيل"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+</FrameLayout>

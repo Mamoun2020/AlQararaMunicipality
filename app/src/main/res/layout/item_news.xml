@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+
+    android:layout_margin="@dimen/_8sdp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/white_circular_border"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/item_iv_news"
+            android:layout_width="@dimen/_124sdp"
+            android:layout_height="@dimen/_124sdp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_8sdp"
+            app:srcCompat="@drawable/ic_complaints"
+            tools:ignore="VectorDrawableCompat" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_tv_news"
+                android:layout_width="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/item_tv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/_4sdp"
+                android:text="اقرأ المزيد" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
