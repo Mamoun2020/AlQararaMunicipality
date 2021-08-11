@@ -2,125 +2,127 @@ package alqarara.municipality.alqararamunicipality.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import alqarara.municipality.alqararamunicipality.R;
-import alqarara.municipality.alqararamunicipality.models.ChatMessage;
 
 public class ChatActivity extends AppCompatActivity {
-
-    public final int SIGN_IN_REQUEST_CODE = 1;
-    private FirebaseListAdapter<ChatMessage> adapter;
+    LinearLayout layout;
+    ImageView sendButton;
+    EditText messageArea;
+    ScrollView scrollView;
+    Firebase reference1, reference2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        FloatingActionButton fab =
-                (FloatingActionButton)findViewById(R.id.fab);
+        layout = (LinearLayout)findViewById(R.id.layout1);
+        sendButton = (ImageView)findViewById(R.id.sendButton);
+        messageArea = (EditText)findViewById(R.id.messageArea);
+        scrollView = (ScrollView)findViewById(R.id.scrollView);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        Firebase.setAndroidContext(this);
+        reference1 = new Firebase("https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/messages/" + FormDetails.id + "_" + FormDetails.chatWith);
+        reference2 = new Firebase("https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/messages/" + FormDetails.chatWith + "_" + FormDetails.id );
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                EditText input = (EditText)findViewById(R.id.input);
+            public void onClick(View v) {
+                String messageText = messageArea.getText().toString();
 
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance()
-                        .getReference()
-                        .push()
-                        .setValue(new ChatMessage(input.getText().toString(),
-                                FirebaseAuth.getInstance()
-                                        .getCurrentUser()
-                                        .getDisplayName())
-                        );
-                input.setText("");
+                if(!messageText.equals("")){
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("message", messageText);
+                    map.put("id", FormDetails.id);
+                    reference1.push().setValue(map);
+                    reference2.push().setValue(map);
+                }
             }
         });
-        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            // Start sign in/sign up activity
-            startActivityForResult(
-                    AuthUI.getInstance()
-                            .createSignInIntentBuilder()
-                            .build(),
-                    SIGN_IN_REQUEST_CODE
-            );
-        } else {
-            // User is already signed in. Therefore, display
-            // a welcome Toast
-            Toast.makeText(this,
-                    "Welcome " + FirebaseAuth.getInstance()
-                            .getCurrentUser()
-                            .getEmail(),
-                    Toast.LENGTH_LONG)
-                    .show();
 
-            // Load chat room contents
-            displayChatMessages();
-        }
-    }
-    private void displayChatMessages() {
-        ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
-
-        adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
-                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+        reference1.addChildEventListener(new ChildEventListener() {
             @Override
-            protected void populateView(View v, ChatMessage model, int position) {
-                // Get references to the views of message.xml
-                TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Map map = dataSnapshot.getValue(Map.class);
+                String message = map.get("message").toString();
+                String id = map.get("id").toString();
 
-                // Set their text
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
-
-                // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessageTime()));
+                if(id.equals(FormDetails.id)){
+                    addMessageBox("You:-\n" + message, 1);
+                }
+                else{
+                    addMessageBox(FormDetails.chatWith + ":-\n" + message, 2);
+                }
             }
-        };
 
-        listOfMessages.setAdapter(adapter);
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode,
-                                    Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void addMessageBox(String message, int type){
+        TextView textView = new TextView(ChatActivity.this);
+        textView.setText(message);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(0, 0, 0, 10);
+        textView.setLayoutParams(lp);
 
-        if(requestCode == SIGN_IN_REQUEST_CODE) {
-            if(resultCode == RESULT_OK) {
-                Toast.makeText(this,
-                        "Successfully signed in. Welcome!",
-                        Toast.LENGTH_LONG)
-                        .show();
-
-                displayChatMessages();
-            } else {
-                Toast.makeText(this,
-                        "We couldn't sign you in. Please try again later.",
-                        Toast.LENGTH_LONG)
-                        .show();
-
-                // Close the app
-                finish();
-            }
+        if(type == 1) {
+            textView.setBackgroundResource(R.drawable.rounded_corner1);
+        }
+        else{
+            textView.setBackgroundResource(R.drawable.rounded_corner2);
         }
 
+        layout.addView(textView);
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
-
-
 }

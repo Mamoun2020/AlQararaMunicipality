@@ -12,8 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlQararaMunicipality">
-        <activity android:name=".activities.SentFormActivity" android:parentActivityName=".activities.MainActivity"/>
-        <activity android:name=".activities.MainActivity"/>
+        <activity
+            android:name=".activities.UserActivity"
+            android:exported="true" />
+        <activity android:name=".activities.ChatActivity" />
+        <activity
+            android:name=".activities.SentFormActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity" />
         <activity
             android:name=".activities.RegisterActivity"
             android:parentActivityName=".activities.LoginActivity" />
@@ -25,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.ChatActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
+        if (FormDetails.id.equals("Admin")){
+            MenuItem itme_user =navigationView.getMenu().findItem(R.id.drawer_user);
+            itme_user.setVisible(true);
+        }
     }
 
     private void Assign() {
@@ -75,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     case R.id.drawer_follow:
                         break;
                     case R.id.drawer_logout:
+                        break;
+                    case R.id.drawer_user:
+                        Intent intent2 = new Intent(getApplicationContext(),UserActivity.class);
+                        startActivity(intent2);
                         break;
                 }
                 return false;

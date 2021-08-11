@@ -3,33 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:paddingBottom="@dimen/_8sdp"
     android:paddingLeft="@dimen/_8sdp"
     android:paddingRight="@dimen/_8sdp"
     android:paddingTop="@dimen/_8sdp"
-    android:orientation="vertical"
-    tools:context=".activities.ChatActivity">
+    tools:context=".activities.UserActivity"
+    android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_weight="20"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/layout1">
-
-        </LinearLayout>
-    </ScrollView>
-
-    <include
-        layout="@layout/message_area"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:layout_marginTop="5dp"/>
+        android:text="No users found!"
+        android:id="@+id/noUsersText"
+        android:visibility="gone"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/usersList"/>
 </LinearLayout>

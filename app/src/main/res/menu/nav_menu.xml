@@ -19,6 +19,11 @@
         android:title="متابعة الشكوى / المقترح"
         android:icon="@drawable/ic_follow"
         />
+        <item
+            android:id="@+id/drawer_user"
+            android:title="المستخدمين"
+            android:visible="false"
+            />
     </group>
     <item
         android:id="@+id/drawer_logout"
