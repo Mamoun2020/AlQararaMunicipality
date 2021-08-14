@@ -68,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                     et_password.setError("at least 5 characters long");
                 }
                 else {
-                    final ProgressDialog pd = new ProgressDialog(RegisterActivity.this);
+                    final ProgressDialog pd = new ProgressDialog(RegisterActivity.this,R.style.MyAlertDialogStyle);
                     pd.setMessage("Loading...");
                     pd.show();
 

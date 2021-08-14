@@ -2,9 +2,12 @@ package alqarara.municipality.alqararamunicipality.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -79,10 +82,10 @@ public class ChatActivity extends AppCompatActivity {
                 String id = map.get("id").toString();
 
                 if(id.equals(FormDetails.id)){
-                    addMessageBox("You:-\n" + message, 1);
+                    addMessageBox("You :\n" + message, 1);
                 }
                 else{
-                    addMessageBox(FormDetails.chatWith + ":-\n" + message, 2);
+                    addMessageBox(FormDetails.chatWith + " :\n" + message, 2);
                 }
             }
 
@@ -108,6 +111,7 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
+
     public void addMessageBox(String message, int type){
         TextView textView = new TextView(ChatActivity.this);
         textView.setText(message);
@@ -116,9 +120,13 @@ public class ChatActivity extends AppCompatActivity {
         textView.setLayoutParams(lp);
 
         if(type == 1) {
+            textView.setTextColor(Color.WHITE);
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
             textView.setBackgroundResource(R.drawable.rounded_corner1);
         }
         else{
+            textView.setTextColor(Color.BLACK);
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
             textView.setBackgroundResource(R.drawable.rounded_corner2);
         }
 

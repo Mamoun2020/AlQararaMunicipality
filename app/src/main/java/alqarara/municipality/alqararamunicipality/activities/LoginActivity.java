@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else{
                     String url = "https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/users.json";
-                    final ProgressDialog pd = new ProgressDialog(LoginActivity.this);
+                    final ProgressDialog pd = new ProgressDialog(LoginActivity.this,R.style.MyAlertDialogStyle);
                     pd.setMessage("Loading...");
                     pd.show();
 

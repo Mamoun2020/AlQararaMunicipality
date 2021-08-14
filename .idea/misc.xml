@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/drawable-v24/header_background.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/drawable/rounded_corner1.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/drawable/rounded_corner2.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/drawable/shape_edittext.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/font/font.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/activity_chat.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/activity_register.xml" value="0.18" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/activity_sent_form.xml" value="0.25" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/activity_user.xml" value="0.16802536231884058" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/item_user.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/message_area.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/layout/navbar_header.xml" value="0.2" />
         <entry key="..\:/Users/Mamoun/AndroidStudioProjects/AlQararaMunicipality/app/src/main/res/menu/nav_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/Mamoun/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_list_item_1.xml" value="0.14130434782608695" />
       </map>
     </option>
   </component>

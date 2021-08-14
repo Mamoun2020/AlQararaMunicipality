@@ -49,8 +49,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
         if (FormDetails.id.equals("Admin")){
-            MenuItem itme_user =navigationView.getMenu().findItem(R.id.drawer_user);
-            itme_user.setVisible(true);
+            MenuItem item_user =navigationView.getMenu().findItem(R.id.drawer_user);
+            MenuItem item_sent =navigationView.getMenu().findItem(R.id.drawer_sent);
+            MenuItem item_follow =navigationView.getMenu().findItem(R.id.drawer_follow);
+            item_user.setVisible(true);
+            item_sent.setVisible(false);
+            item_follow.setVisible(false);
         }
     }
 

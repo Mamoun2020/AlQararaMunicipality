@@ -44,7 +44,7 @@ public class SentFormActivity extends AppCompatActivity {
 //    TextView noUsersText;
     ArrayList<String> al = new ArrayList<>();
     int totalUsers = 0;
-    ProgressDialog pd;
+//    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class SentFormActivity extends AppCompatActivity {
                 area=sp_area.getSelectedItem().toString();
                 category=sp_category.getSelectedItem().toString();
                 type=sp_type.getSelectedItem().toString();
-                final ProgressDialog pd = new ProgressDialog(SentFormActivity.this);
+                final ProgressDialog pd = new ProgressDialog(SentFormActivity.this,R.style.MyAlertDialogStyle);
                 pd.setMessage("Loading...");
                 pd.show();
 
@@ -164,9 +164,9 @@ public class SentFormActivity extends AppCompatActivity {
 
     }
     private void chat(){
-        pd = new ProgressDialog(SentFormActivity.this);
-        pd.setMessage("Loading...");
-        pd.show();
+//        pd = new ProgressDialog(SentFormActivity.this);
+//        pd.setMessage("Loading...");
+//        pd.show();
 
         String url = "https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/users.json";
 
@@ -233,7 +233,7 @@ public class SentFormActivity extends AppCompatActivity {
 //            usersList.setVisibility(View.VISIBLE);
 //            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
 //        }
-
-        pd.dismiss();
+//
+//        pd.dismiss();
     }
 }

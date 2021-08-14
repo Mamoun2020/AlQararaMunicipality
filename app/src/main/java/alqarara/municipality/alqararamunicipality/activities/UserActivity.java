@@ -41,7 +41,7 @@ public class UserActivity extends AppCompatActivity {
         usersList = (ListView)findViewById(R.id.usersList);
         noUsersText = (TextView)findViewById(R.id.noUsersText);
 
-        pd = new ProgressDialog(UserActivity.this);
+        pd = new ProgressDialog(UserActivity.this,R.style.MyAlertDialogStyle);
         pd.setMessage("Loading...");
         pd.show();
 
@@ -102,7 +102,7 @@ public class UserActivity extends AppCompatActivity {
         else{
             noUsersText.setVisibility(View.GONE);
             usersList.setVisibility(View.VISIBLE);
-            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
+            usersList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_user, al));
         }
 
         pd.dismiss();
