@@ -95,24 +95,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#372c24"
-            android:text="أقرب معلم"/>
-
-        <Spinner
-            android:id="@+id/sent_sp_near"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:background="@drawable/shape_edittext"
-            android:entries="@array/spinnerItems"
-            android:maxLines="1"
-            android:minHeight="48dp"
-            android:padding="@dimen/_4sdp"
-            android:singleLine="true" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#372c24"
             android:text="المنطقة"/>
 
         <Spinner
@@ -122,11 +104,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
             android:background="@drawable/shape_edittext"
-            android:entries="@array/spinnerItems"
+            android:entries="@array/spinnerarea"
             android:maxLines="1"
             android:minHeight="48dp"
             android:padding="@dimen/_4sdp"
             android:singleLine="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#372c24"
+            android:text="أقرب معلم"/>
+
+        <Spinner
+            android:id="@+id/sent_sp_near"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/shape_edittext"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:padding="@dimen/_4sdp"
+            android:singleLine="true" />
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
             android:background="@drawable/shape_edittext"
-            android:entries="@array/spinnerItems"
+            android:entries="@array/spinnercategory"
             android:maxLines="1"
             android:minHeight="48dp"
             android:padding="@dimen/_4sdp"

@@ -2,6 +2,23 @@
     <string name="app_name">بلدية القرارة</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="spinnerarea">
+        <item>منطقة 86</item>
+        <item>السريج</item>
+        <item>أل عبد الغفور و فياض</item>
+        <item>منطقة العبادلة</item>
+        <item>منطقة الغربية</item>
+        <item>منطقة المحررات</item>
+        <item>منطقة المواصي</item>
+    </string-array>
+    <string-array name="spinnercategory">
+        <item>قسم المياه والصرف الصحي</item>
+        <item>قسم التنظيم والتخطيط</item>
+        <item>قسم المالية</item>
+        <item>الشؤون الإدارية</item>
+        <item>قسم الصيانة</item>
+        <item>شكوى عامة</item>
+    </string-array>
     <string-array name="spinnerItems">
         <item>item1</item>
         <item>item2</item>
