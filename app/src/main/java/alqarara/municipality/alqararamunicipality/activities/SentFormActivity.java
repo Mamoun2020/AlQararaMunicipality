@@ -46,11 +46,12 @@ public class SentFormActivity extends AppCompatActivity {
     ArrayList<String> al = new ArrayList<>();
     int totalUsers = 0;
 //    ProgressDialog pd;
-
+int random ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sent_form);
+        random= new Random().nextInt(9000);
         inflate();
         configureToolbar();
         Firebase.setAndroidContext(this);
@@ -248,12 +249,12 @@ public class SentFormActivity extends AppCompatActivity {
                 pd.show();
 
                 String url = "https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/forms.json";
-
                 StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
                     @Override
                     public void onResponse(String s) {
                         Firebase reference = new Firebase("https://alqararamunicipality-b276d-default-rtdb.firebaseio.com/forms");
-                        int random = new Random().nextInt(9000);
+                        random= new Random().nextInt(10000);
+                        Log.d("random2",random+"");
                         if(s.equals("null")) {
                             if( TextUtils.isEmpty(id))
                             {
@@ -423,8 +424,11 @@ public class SentFormActivity extends AppCompatActivity {
         RequestQueue rQueue = Volley.newRequestQueue(SentFormActivity.this);
         rQueue.add(request);
         FormDetails.chatWith = "Admin";
+        Log.d("random3",random+"");
         Intent intent =new Intent(SentFormActivity.this, ChatActivity.class)
-                .putExtra("text",et_text.getText().toString());
+                .putExtra("text",et_text.getText().toString())
+                .putExtra("text",et_text.getText().toString())
+                .putExtra("id",et_id.getText().toString());
         startActivity(intent);
 
 //        if(UserDetails.username.equals("mamoun")){
